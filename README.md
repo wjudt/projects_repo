@@ -8,8 +8,10 @@ My first project is connected with clearing a raw dataset, which I found at kagg
 
 Project location: 
 - ./computer_jobs_cleaning_and_analysis
+
 Code: 
 - All code in a file: Cleaning_computer_jobs_dataset.ipynb
+
 Data: 
 - raw data in a file: uncleaned_computer_jobs_original.csv
 - cleaned data in a file: cleaned_computer_jobs.csv
@@ -23,6 +25,7 @@ Third part is connected with developing several queries of varying complexity fo
 
 Project location: 
 - ./beer_ranking_web_scraping
+
 Code: 
 - First part: Web_scraping.ipynb
 - Second part: SQL_database_preparation.ipynb
