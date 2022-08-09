@@ -1,3 +1,5 @@
+CREATE VIEW best_breweries_USA
+AS
 select 
 	brewery_name
 	,year(date) as year_added
@@ -36,6 +38,3 @@ where brewery_name in (
 group by 
 	brewery_name
 	,year(date)
-order by year_added
-
-
