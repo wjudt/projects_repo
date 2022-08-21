@@ -44,4 +44,5 @@ Data downloaded from a sftp server are located in the folder: ./beer_ranking_web
 - **Third part:** ./beer_ranking_web_scraping/sql_queries/
 - **Fourth part:** ./beer_ranking_web_scraping/power_bi_dashboards/
 
-### Third project - to be continued :)
+### Third project - preparing a dataflow, which is used during an analysis of air traffic above a choosen part of polish sky
+to be continued :)
