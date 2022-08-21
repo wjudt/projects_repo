@@ -1,10 +1,5 @@
+dags/constant_values/api_login_data.py
+logs/
 venv/
-
-.idea/vcs.xml
-.idea/modules.xml
-.idea/misc.xml
-.idea/.gitignore
-.idea/air_traffic_with_airflow.iml
-.idea/inspectionProfiles/Project_Default.xml
-.idea/inspectionProfiles/profiles_settings.xml
+.idea/
 
