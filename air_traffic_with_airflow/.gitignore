@@ -1,5 +1,12 @@
 dags/constant_values/api_login_data.py
+dags/minio_s3_sensor_operator.py
+
 logs/
 venv/
 .idea/
+commands.txt
 
+minio_docker/
+packages/zone1_20220822T124500.txt
+minio/open-sky-clean-data/
+minio/open-sky-raw-data/
