@@ -7,7 +7,6 @@ venv/
 commands.txt
 
 minio_docker/
-packages/zone1_20220822T124500.txt
 minio/open-sky-clean-data/
 minio/open-sky-raw-data/
 minio/.minio.sys/

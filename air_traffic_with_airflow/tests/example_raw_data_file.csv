@@ -1,0 +1,15 @@
+﻿{   'states': [   StateVector(dict_values(['471f8a', 'WZZ4438 ', 'Hungary',1661245198,1661245198,17.3368,52.7097,10027.92, False,235.9,29.53,-4.88, None,10454.64, '0434', False, 0]))
+                  StateVector(dict_values(['471f51', 'WZZ1856 ', 'Hungary',1661245198,1661245198,16.4532,51.8031,11269.98, False,214.14, None,0, None,11689.08, '4520', False, 0]))
+                  StateVector(dict_values(['4aca07', 'NSZ2848 ', 'Sweden',1661245198,1661245198,17.4487, None,11277.6, False,215.55,173.15,0, None,11689.08, '4511', False, 0]))
+                  StateVector(dict_values(['344508', 'PVG6893 ', 'Spain',1661245198,1661245198,17.9278,52.5493,10081.26, False,225.56,99.05,-7.48, None,10439.4, '4665', False, 0]))
+                  StateVector(dict_values(['48932b', None, 'Poland',1661245194, None,16.8639,52.4139,144.78, False,65.25,287.43,-4.23, None,228.6, '1000', False, 0]))
+                  StateVector(dict_values(['44001b', 'AUA312C ', 'Austria',1661245198,1661245198,17.2535,51.387,10668, False, None,189.06,0, None,11094.72, None, False, 0]))
+                  StateVector(dict_values(['4bcded', 'SXS3Q   ', 'Turkey', None,1661245198,16.0261,52.5797, None, False,221.19,139.72,0, None,12306.3, '7676', False, 0]))
+                  StateVector(dict_values(['ae0402', 'DUKE60  ', 'United States',1661245085,1661245158,16.8441,52.4176,91.44, False,55.49,287.26,-2.93, None,175.26, '0772', False, 0]))
+                  StateVector(dict_values(['4bcc67', 'THY7EZ  ', 'Turkey',1661245198,1661245198,16.1876,51.7835,9425.94, False,217.84,287.88,-5.53, None,9806.94, '3205', False, 0]))
+                  StateVector(dict_values(['4792a6', 'NOZ1550 ', 'Norway',1661245198,1661245198, None,51.6236,11894.82, False,214.58,161.26,-0.33, None,12298.68, '1337', False, 0]))
+                  StateVector(dict_values(['461e17', 'FIN47G  ', 'Finland',1661245198,1661245198,16.2822,52.6911,12496.8, False,238.14,5.21,0, None,12900.66, '0263', False, 0]))
+                  StateVector(dict_values(['4bb85a', 'PGT37R  ', None,1661245198,1661245198,17.6391,52.6411,11574.78, False,246.84,326.04,0, None,11993.88, '3225', False, 0]))
+                  StateVector(dict_values(['48c22e', 'RYS5764 ', 'Poland',1661241504,1661241560,16.8289,52.4179, None, True,5.4,196.88, None, None, None, '2646', False, 0]))]
+                  StateVector(dict_values(['48c22e', 'RYS5831 ', 'Poland',1661245198,1661245198,16.4283,52.3006,3284.22, False,166.36,222.87,5.85, None,3444.24, '6522', False, 0]))]
+    'time': 1661245198},,,,,,,,,,,,,,,,
