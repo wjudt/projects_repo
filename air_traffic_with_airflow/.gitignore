@@ -5,6 +5,7 @@ logs/
 venv/
 .idea/
 commands.txt
+download/
 
 minio_docker/
 minio/open-sky-clean-data/

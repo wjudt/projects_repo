@@ -27,9 +27,7 @@ def get_api_data_sent_to_minio(username, password, ts_nodash):
         bucket_name="open-sky-raw-data",
         replace=True
     )
-
-    print(data)
-    print(type(data))
+    print(f'data properly saved to a file: zone1_{ts_nodash}.csv')
 
 
 with DAG(

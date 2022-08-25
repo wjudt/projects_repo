@@ -2,15 +2,6 @@ import datetime
 import pandas as pd
 
 
-def get_date():
-    current_time = datetime.datetime.now()
-    past_time = current_time - datetime.timedelta(hours=1)
-    unix_current_timestamp = round(datetime.datetime.timestamp(current_time))
-    unix_past_timestamp = round(datetime.datetime.timestamp(past_time))
-    print(f'past time: {unix_past_timestamp}')
-    print(f'current time: {unix_current_timestamp}')
-
-
 def unix_time_to_datetime(unix_time):
     try:
         dt = datetime.datetime.fromtimestamp(int(unix_time))
@@ -54,8 +45,10 @@ def clean_data(path):
                   'baro_altitude_m',  # can be none
                   'squawk_code',  # can be none
                   'spi',
-                  'position_source']  # 0 = ADS-B, 1 = ASTERIX, 2 = MLAT, 3 = FLARM
+                  'position_source',   # 0 = ADS-B, 1 = ASTERIX, 2 = MLAT, 3 = FLARM
+                  'useless']
 
+    df = df.drop(labels="useless", axis=1)
     df = df.replace('None', None)
     df['icao24'] = df['icao24'].str.split('[').str[-1].str.replace("'", "").str.strip()
     df['callsign'] = df['callsign'].str.replace("'", "").str.strip()
@@ -76,8 +69,11 @@ def clean_data(path):
                     'baro_altitude_m': 'float64',
                     'position_source': 'int64'
                     })
+
     return df
 
 
+
 if __name__ == "__main__":
-    clean_data("../tests/example_raw_data_file.csv")
+    df = clean_data("../../tests/example_raw_data_file.csv")
+    df.to_parquet('a.parquet')
