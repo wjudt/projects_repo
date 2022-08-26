@@ -50,7 +50,7 @@ def clean_data_save_to_local_file(ti, ts_nodash, execution_date) -> str:
     print(file_path)
     df = modules.clean_data(path=file_path[0], execution_date=execution_date)
     clean_csv_path = f"./download/zone1_{ts_nodash}_clean.csv"
-    df.to_csv(clean_csv_path)
+    df.to_csv(clean_csv_path, index=False)
     print(f'data properly saved to a file: {clean_csv_path}')
     return clean_csv_path
 
