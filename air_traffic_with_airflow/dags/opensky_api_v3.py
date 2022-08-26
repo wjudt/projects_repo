@@ -32,11 +32,11 @@ def get_api_data_sent_to_minio(username: str, password: str, ts_nodash) -> None:
     print(f'data properly saved to a file: zone1_{ts_nodash}.csv')
 
 
-def read_file_from_minio(key: str, bucket_name: str, local_path: str) -> str:
+def read_file_from_minio(ts_nodash, bucket_name: str, local_path: str) -> str:
     s3_hook = S3Hook(aws_conn_id="minio_connection")
     file_name = s3_hook.download_file(
         bucket_name=bucket_name,
-        key=key,
+        key=f"zone1_{ts_nodash}.csv",
         local_path=local_path
     )
     return file_name
@@ -97,7 +97,6 @@ with DAG(
         python_callable=read_file_from_minio,
         op_kwargs={
             "bucket_name": "open-sky-raw-data",
-            "key": "zone1_20220823T081943.csv",
             "local_path": r"/opt/airflow/download/"
         }
         )
