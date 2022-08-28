@@ -47,7 +47,9 @@ def read_file_from_raw_bucket(ts_nodash, bucket_name: str, local_path: str) -> s
 
 def clean_data_save_to_local_file(ti, ts_nodash, execution_date, ts) -> str:
     file_path = ti.xcom_pull(task_ids=["read_file_from_raw_bucket"])
+    print(file_path)
     date = ts
+    print(type(date))
     df = modules.clean_data(path=file_path[0], execution_date=date)
     clean_csv_path = f"./download/zone1_{ts_nodash}_clean.csv"
     df.to_csv(clean_csv_path, index=False, header=False)
@@ -71,7 +73,7 @@ def upload_local_file_to_clean_bucket(ti, ts_nodash):
 
 with DAG(
         default_args=default_args,
-        dag_id='open_sky_api_v7',
+        dag_id='open_sky_api_v8',
         description='Dag for retrieving data from open sky api',
         start_date=datetime(2022, 8, 22),
         schedule_interval='*/15 * * * *',
@@ -103,6 +105,7 @@ with DAG(
         task_id='upload_local_file_to_clean_bucket',
         python_callable=upload_local_file_to_clean_bucket,
     )
+
 
 
 

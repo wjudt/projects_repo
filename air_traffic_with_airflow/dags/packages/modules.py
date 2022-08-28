@@ -1,10 +1,9 @@
 import datetime
 import pandas as pd
 
-
 def unix_time_to_datetime(unix_time):
     try:
-        dt = datetime.datetime.fromtimestamp(int(unix_time))
+        dt = datetime.datetime.fromtimestamp(int(unix_time)).isoformat()
         return dt
     except ValueError:
         return None
@@ -26,7 +25,7 @@ def string_to_boolean(arg):
         return None
 
 
-def clean_data(path):
+def clean_data(execution_date, path: str):
     df = pd.read_csv(path, delimiter=',', header=None, skipinitialspace=True)
     df = df.drop(df.tail(1).index)
     df.columns = ['icao24',
@@ -59,6 +58,7 @@ def clean_data(path):
     df['position_source'] = df['position_source'].str.findall(r'\d+').str[0]
     df['on_ground'] = df['on_ground'].apply(string_to_boolean)
     df['spi'] = df['spi'].apply(string_to_boolean)
+    df['dag_utc_time'] = execution_date #datetime.datetime.fromtimestamp(execution_date.timestamp())
 
     df = df.astype({'longitude_deg': 'float64',
                     'latitude_deg': 'float64',
@@ -73,7 +73,5 @@ def clean_data(path):
     return df
 
 
-
 if __name__ == "__main__":
-    df = clean_data("../../tests/example_raw_data_file.csv")
-    df.to_parquet('a.parquet')
+    df = clean_data(path="zone1_20220823T084500.csv",execution_date=datetime.datetime(2022, 8, 23, 8, 45, 0))

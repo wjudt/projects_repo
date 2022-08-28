@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS area1_flat (
+--   id serial primary KEY,
+   icao24 varchar(10),
+   callsign varchar(10),
+   origin_country varchar(50) not null,
+   time_position timestamp,
+   time_last_contact timestamp not null,
+   longitude_deg numeric(6, 4),
+   latitude_deg numeric(6, 4),
+   geo_altitude_m numeric,
+   on_ground bool not null,
+   velocity_m_per_s numeric,
+   true_track_dec_deg numeric,
+   vertical_rate_m_per_s numeric,
+   sensors varchar(50),
+   baro_altitude_m numeric,
+   squawk_code int,
+   spi bool not null,
+   position_source int,
+   dag_utc_time_str timestamp not null
+);

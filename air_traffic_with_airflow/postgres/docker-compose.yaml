@@ -11,6 +11,8 @@ services:
       - '5432:5432'
     volumes:
       - db:/var/lib/postgresql/data
+      - ./postgres.conf:/var/lib/postgresql/data/postgres.conf
+      - ./insert_data:/insert_data
 volumes:
   db:
     driver: local
