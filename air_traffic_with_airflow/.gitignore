@@ -6,6 +6,7 @@ venv/
 .idea/
 commands.txt
 download/
+postgres/insert_data/
 
 minio_docker/
 minio/open-sky-clean-data/
