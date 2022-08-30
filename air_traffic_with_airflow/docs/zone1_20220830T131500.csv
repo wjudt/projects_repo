@@ -1,0 +1,12 @@
+{   'states': [   StateVector(dict_values(['c02eca', 'ACA81   ', 'Canada', 1661866199, 1661866199, 16.6424, 52.1319, 10363.2, False, 231.92, 320.13, -0.33, None, 10675.62, '1141', False, 0])),
+                  StateVector(dict_values(['ae5d32', 'R20809  ', 'United States', 1661866010, 1661866017, 17.9985, 52.3507, 480.06, False, 54.5, 289.29, -2.6, None, 670.56, '4137', False, 0])),
+                  StateVector(dict_values(['488090', 'SPAER   ', 'Poland', 1661866199, 1661866199, 16.9923, 51.7225, 4297.68, False, 109.64, 351.91, -5.2, None, 4480.56, '4264', False, 0])),
+                  StateVector(dict_values(['ae04e0', 'NACHO71 ', 'United States', 1661865968, 1661866199, 17.3277, 52.6743, 11887.2, False, 222.66, 249.72, 0, None, 12192, '0761', False, 0])),
+                  StateVector(dict_values(['43c6fb', 'RRR9912 ', 'United Kingdom', 1661866199, 1661866199, 17.6411, 52.8929, 8229.6, False, 199.28, 253.81, 0, None, 8496.3, '1512', False, 0])),
+                  StateVector(dict_values(['48ad08', 'LOT3AZ  ', 'Poland', 1661866199, 1661866199, 16.6686, 52.6133, 8229.6, False, 223.16, 129.86, 0, None, 8503.92, '3703', False, 0])),
+                  StateVector(dict_values(['ae0878', 'REBEL80 ', 'United States', 1661866199, 1661866199, 16.5883, 52.96, 8221.98, False, 153.88, 66.35, 0, None, 8481.06, '7660', False, 0])),
+                  StateVector(dict_values(['ae1bf6', 'HKY709  ', 'United States', 1661866199, 1661866199, 16.6816, 52.9943, 7315.2, False, 163.86, 240.05, -0.33, None, 7536.18, '4324', False, 0])),
+                  StateVector(dict_values(['48c229', 'RYR8FG  ', 'Poland', 1661866199, 1661866199, 17.4539, 51.0973, 8039.1, False, 189.75, 356.11, -9.75, None, 8359.14, '1000', False, 0])),
+                  StateVector(dict_values(['48ce44', 'SPUTE   ', 'Poland', 1661866172, 1661866172, 16.4829, 52.1956, 609.6, False, 45.1, 110.71, 0.33, None, 716.28, '7000', False, 0])),
+                  StateVector(dict_values(['47a218', 'NOZ89Z  ', 'Norway', 1661866199, 1661866199, 17.0907, 52.9175, 11026.14, False, 224.55, 333.02, 4.23, None, 11292.84, '4672', False, 0]))],
+    'time': 1661866200}

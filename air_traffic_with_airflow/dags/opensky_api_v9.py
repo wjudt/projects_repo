@@ -85,7 +85,9 @@ def read_file_from_clean_bucket(ts_nodash, bucket_name: str, local_path: str) ->
     new_file_path = f"./postgres/insert_data/zone1_{ts_nodash}_clean.csv"
     shutil.move(src=downloaded_file_path, dst=new_file_path)
     print(f"file path: {new_file_path}")
-    return new_file_path
+    cut_file_path = new_file_path.split('/')[-1]
+    print(f"cut file path: {cut_file_path}")
+    return cut_file_path
 
 
 with DAG(
@@ -152,7 +154,7 @@ with DAG(
         postgres_conn_id='postgres_connection',
         sql="""
         copy area1_flat
-        from '/insert_data/zone1_20220829T130247_clean.csv'
+        from '/insert_data/{{ti.xcom_pull(task_ids='read_file_from_clean_bucket')}}'
         delimiter ',' csv;
         """
     )

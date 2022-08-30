@@ -12,9 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install additional packages
         run: sudo apt-get update -y && sudo apt-get install -y maven default-jdk && sudo pip install -U sphinx sphinx_rtd_theme 
-      - name: Make documentation
+      - name: Make docs
         run: cd docs && make
-      - name: Commit documentation changes
+      - name: Commit docs changes
         run: |
           git clone https://github.com/openskynetwork/opensky-api.git --branch gh-pages --single-branch gh-pages
           cp -r docs/free/_build/html/* gh-pages/
