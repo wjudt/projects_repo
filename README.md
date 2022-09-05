@@ -50,7 +50,7 @@ Main used libraries and tools: python, pandas, pytest, apache-airflow, docker, m
 Third project was relied on collecting data from the OpenSkyAPI (https://openskynetwork.github.io/opensky-api/python.html), from the area showed on a figure 1 (all figures which will be mentioned in that part are located in ./docs/figures/). Analysed area has about 30.5 thousands square kilometres (figure 2).  
 Everything is orchestrated together in Apache-Airflow environment. Graph and task grid obtained in Airflow for composed DAG is showed in figures 4 and 5. The Airflow is installed inside a docker container. The data is read from API once per 15 minutes and saved in a raw bucket at a Minio server in .csv file(figure 3). Then data is cleaned and saved in a clean bucket at the same Minio server in .csv file.  
 Data cleaning is realized by a python script, for which I have prepared a few unit tests according to the TDD methodology. After that data is downloaded from clean bucket and added into Postgres database, which is configured inside a docker container. Containers were configured in docker-compose.yaml files.  
-Database preview and SQL code preparation, which is necessary for making a table, removing duplicated data and copy data from .csv file is realized in the DBeaver tool (figure 6). Whole project is prepared in the virtual environment with using of the PyCharm tool. The project in a few days will be upgraded by addition a dynamic dashboard, which will allow for analysing data collected inside the Postgres database.  
+Database preview and SQL code preparation, which is necessary for making a table, removing duplicated data and copy data from .csv file is realized in the DBeaver tool (figure 6). Whole project is prepared in the virtual environment with using of the PyCharm tool. Data collected inside the Postgres database are grouped via sql script (preparation of a view), which is used for making a dynamic dashboard in Power BI software. Mentionad dashboard sumarize 
 Version 0.1 of the project has some problems with access permissions after sending cleaned data into Postgres database container. It requires manual entering into a Postgres container and set permissions for new files – new files do not inherit permissions defined for a directory. Then everything works as it should. I have to repair that feature in the next version of the project. 
   
 Project location: 
@@ -59,7 +59,8 @@ Project location:
 Code and data location: 
 - **DAG:** ./air_traffic_with_airflow/dags/opensky_api_v9.py  
 - **data cleaning module:** ./air_traffic_with_airflow/dags/packages/modules.py  
-- **SQL queries:** ./air_traffic_with_airflow/dags/sql_queries/create_flat_table.sql
+- **SQL queries:** ./air_traffic_with_airflow/dags/sql_queries/
 - **Minio server:** ./air_traffic_with_airflow/minio
 - **Unit tests:** ./air_traffic_with_airflow/tests/test_modules.py
 - **Example of raw and clean data file:** ./air_traffic_with_airflow/docs/
+- **Dashboard:** ./air_traffic_with_airflow/power_bi_dashboard/
