@@ -64,3 +64,15 @@ Code and data location:
 - **Unit tests:** ./air_traffic_with_airflow/tests/test_modules.py
 - **Example of raw and clean data file:** ./air_traffic_with_airflow/docs/
 - **Dashboard:** ./air_traffic_with_airflow/power_bi_dashboard/
+
+### Project number 3.5 - making an API
+Main used libraries and tools: python, fastapi, SQLAlchemy, pydantic, uvicorn, postman  - details in requirements.txt file
+  
+The API allows reading data from a database, which was prepared in the third project. So from CRUD utilities this API realize only read function. We have three posibilities to read data from a database by the API: 
+- First request allows for obtaining all flights, but it use a skip and limit parameters for presented records. 
+- Second request allows for obtaining a single flight by icao24 code. 
+- Third request choose records from a database in a defined period of time according to a date of DAG execution.  
+Example request results from a postman app and a shortcut from the fastapi automatic documentation are presented in the 'screenshots' folder.
+  
+Project location: 
+- ./api_to_postgres_db/
