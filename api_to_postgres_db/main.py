@@ -1,39 +1,24 @@
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import sessionmaker
-from fastapi import FastAPI
-import sqlalchemy
+from fastapi import Depends, FastAPI, HTTPException
+from sqlalchemy.orm import Session
 
-engine = sqlalchemy.create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
-Base = declarative_base()
-SessionLocal = sessionmaker(bind=engine)
+import read, models, schemas
+from database import SessionLocal, engine
 
-
-
-
-
-
-connection = engine.connect()
-metadata = sqlalchemy.MetaData()
-area1 = sqlalchemy.Table('area1_flat', metadata, autoload=True, autoload_with=engine)
-
-# print(area1.columns.keys()) #show column names
-# print(repr(metadata.tables['area1_flat'])) #show metadata
-
-query = sqlalchemy.select([area1])
-cursor = connection.execute(query)
-result = cursor.fetchall()
-print(result[:3])
-
-
-
+models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 
-@app.get("/")
-async def hello():
-    return {"message": "Hello World"}
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
-@app.get("/{name}")
-async def say_hello(name: int):
-    return {"message": f"Hello {name}"}
+@app.get("/flights/", response_model=list[schemas.FlightBase])
+def read_flights(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    flights = read.get_flights(db, skip=skip, limit=limit)
+    return flights
+
+
