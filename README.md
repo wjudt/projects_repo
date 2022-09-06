@@ -1,5 +1,5 @@
 ## Hello everyone!
-My name is Wojciech Judt. I try to explore the secrets of data exploration. I am interested in application of data engineering tools in real life. I want to show you what i have done so far :).
+My name is Wojciech Judt. I try to explore the secrets of data. I am interested in application of data engineering tools in real life. I want to show you what i have done so far :).
 
 ### First project - cleaning computer jobs offers 
 Main used libraries and tools: python 3.8, pandas 1.4.3, matplotlib 3.3.4
